@@ -1,6 +1,9 @@
 # introduce 介绍
 在ESP32-C3设备上让两颗led灯闪烁  
 Make two LED lights flash on the ESP32-C3 device
+![blinky.gif](blinky.gif)
+![esp32-c3.png](esp32-c3.png)
+![esp32-c3-detail.png](esp32-c3-detail.png)
 
 # generate project 生成项目
 cargo generate esp-rs/esp-idf-template cargo
