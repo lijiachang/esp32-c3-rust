@@ -1,8 +1,11 @@
 # build
 cargo b --bin wifi --release
+cargo b --bin http_client --release
 
 # flash to esp32-c3  and monitor
 espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/wifi --monitor
+espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/http_client --monitor
+
 
 ```
 
@@ -151,5 +154,40 @@ I (18771) esp_idf_svc::ping: From 254.31.168.192 icmp_seq=3 ttl=64 time=11ms byt
 I (19771) esp_idf_svc::ping: Ping success callback invoked
 I (19771) esp_idf_svc::ping: From 254.31.168.192 icmp_seq=4 ttl=64 time=8ms bytes=56
 I (20761) esp_idf_svc::ping: Ping success callback invoked
+
+```
+
+
+```
+I (5810) http_client: 响应状态：200
+I (5810) http_client: 响应内容：{
+  "args": {}, 
+  "headers": {
+    "Content-Length": "0", 
+    "Host": "httpbin.org", 
+    "User-Agent": "ESP32 HTTP Client/1.0", 
+    "X-Amzn-Trace-Id": "Root=1-669bbf0c-45d84dbf7d877aa00ae8ebb4"
+  }, 
+  "origin": "91.103.120.186", 
+  "url": "http://httpbin.org/get"
+}
+
+I (7350) http_client: 响应状态：200
+I (7350) http_client: 响应内容：{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Host": "httpbin.org", 
+    "Transfer-Encoding": "chunked", 
+    "User-Agent": "ESP32 HTTP Client/1.0", 
+    "X-Amzn-Trace-Id": "Root=1-669bbf0e-6c34910a1cfff02907c78df5"
+  }, 
+  "json": null, 
+  "origin": "91.103.120.186", 
+  "url": "http://httpbin.org/post"
+}
+
 
 ```

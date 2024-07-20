@@ -1,6 +1,7 @@
 # Esp32 on Rust demo
 * Make two LED lights flash
 * Wifi connect
+* Http client
 
 # introduce 介绍
 在ESP32-C3设备上让两颗led灯闪烁  
@@ -112,3 +113,10 @@ cargo b --bin wifi --release
 
 ## flash to esp32-c3  and monitor
 espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/wifi --monitor
+
+# Http Client
+## build
+cargo b --bin http_client --release
+
+## flash to esp32-c3  and monitor
+espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/http_client --monitor
