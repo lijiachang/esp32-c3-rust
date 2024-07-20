@@ -1,3 +1,7 @@
+# Esp32 on Rust demo
+* Make two LED lights flash
+* Wifi connect
+
 # introduce 介绍
 在ESP32-C3设备上让两颗led灯闪烁  
 Make two LED lights flash on the ESP32-C3 device
@@ -101,3 +105,10 @@ I (4367) esp32_c3_led: loop end.
 I (4367) esp32_c3_led: loop start...
 I (6367) esp32_c3_led: loop end.
 ```
+
+# Wifi connect
+## build
+cargo b --bin wifi --release
+
+## flash to esp32-c3  and monitor
+espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/wifi --monitor
