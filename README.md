@@ -2,6 +2,7 @@
 * Make two LED lights flash
 * Wifi connect
 * Http client
+* Https client
 
 # introduce 介绍
 在ESP32-C3设备上让两颗led灯闪烁  
@@ -120,3 +121,11 @@ cargo b --bin http_client --release
 
 ## flash to esp32-c3  and monitor
 espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/http_client --monitor
+
+
+# Https Client
+## build
+cargo b --bin https_client --release
+
+## flash to esp32-c3  and monitor
+espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/https_client --monitor

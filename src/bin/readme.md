@@ -1,10 +1,12 @@
 # build
 cargo b --bin wifi --release
 cargo b --bin http_client --release
+cargo b --bin https_client --release
 
 # flash to esp32-c3  and monitor
 espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/wifi --monitor
 espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/http_client --monitor
+espflash flash -p /dev/ttyACM0  target/riscv32imc-esp-espidf/release/https_client --monitor
 
 
 ```
@@ -189,5 +191,13 @@ I (7350) http_client: 响应内容：{
   "url": "http://httpbin.org/post"
 }
 
+
+```
+
+
+```text
+I (4985) esp-x509-crt-bundle: Certificate validated
+I (5635) https_client: 响应状态：200
+I (5635) https_client: 响应内容：{"symbol":"BTCUSDT","price":"66616.02000000"}
 
 ```
